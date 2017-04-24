@@ -96,12 +96,13 @@ def parse(media_query):
             })
             continue
 
-        match = re.match(r"(\([^\)]+\))", expressions)
-        if not match:
+        matches = re.findall(r"(\([^\)]+\))", expressions)
+
+        if not matches:
             raise Exception("Invalid CSS media query: {}".format(query))
 
         expression_list = []
-        for exp in match.groups():
+        for exp in matches:
             matched = re.match(RE_MQ_EXPRESSION, exp)
 
             if not matched:
