@@ -1,21 +1,21 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from cssmq import match, parse
+from cssmediaquery import match, parse
 import unittest
 
 
 class MediaQueryParserAndMatcherTest(unittest.TestCase):
 
     def test_screen(self):
-        self.assertEquals(parse('screen'), [{
+        self.assertEqual(parse('screen'), [{
             "inverse": False,
             "type": 'screen',
             "expressions": []
         }])
 
     def test_not_screen(self):
-        self.assertEquals(parse('not screen'), [{
+        self.assertEqual(parse('not screen'), [{
             "inverse": True,
             "type": 'screen',
             "expressions": []
@@ -31,10 +31,10 @@ class MediaQueryParserAndMatcherTest(unittest.TestCase):
 
         parsed = parse(query)
         self.assertTrue(isinstance(parsed, list))
-        self.assertEquals(len(parsed), 6)
-        self.assertEquals(parsed[0]["expressions"][0]["feature"],
+        self.assertEqual(len(parsed), 6)
+        self.assertEqual(parsed[0]["expressions"][0]["feature"],
                           "-webkit-min-device-pixel-ratio")
-        self.assertEquals(parsed[1]["expressions"][0]["modifier"],
+        self.assertEqual(parsed[1]["expressions"][0]["modifier"],
                           "min")
 
     def test_media_query_invalid(self):
@@ -47,7 +47,7 @@ class MediaQueryParserAndMatcherTest(unittest.TestCase):
                 parse(query)
             except Exception as e:
                 msg = "Invalid CSS media query: {}".format(query)
-                self.assertEquals(e.message, msg)
+                self.assertEqual(str(e), msg)
             else:
                 self.assertTrue(False)
 

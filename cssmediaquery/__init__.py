@@ -162,11 +162,3 @@ def match_query(query, values):
 
 def match(media_query, values):
     return any(match_query(query, values) for query in parse(media_query))
-
-
-# if __name__ == '__main__':
-#     is_a_match = match("screen and (min-width: 40em)", {
-#         "type": 'screen',
-#         "width": '640px'
-#     })
-#     print is_a_match
