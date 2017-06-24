@@ -1,6 +1,6 @@
 ## css-mediaquery
 
-[![Build Status](https://travis-ci.org/kirang89/css-mediaquery.svg?branch=master)](https://travis-ci.org/kirang89/css-mediaquery)
+[![Build Status](https://travis-ci.org/kirang89/css-mediaquery.svg?branch=master)](https://travis-ci.org/kirang89/css-mediaquery) [![PyPI version](https://badge.fury.io/py/cssmediaquery.svg)](https://badge.fury.io/py/cssmediaquery)
 
 Parses and determines if a given CSS Media Query matches a set of values.
 
