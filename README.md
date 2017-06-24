@@ -1,5 +1,7 @@
 ## css-mediaquery
 
+[![Build Status](https://travis-ci.org/kirang89/css-mediaquery.svg?branch=master)](https://travis-ci.org/kirang89/css-mediaquery)
+
 Parses and determines if a given CSS Media Query matches a set of values.
 
 This is a port of https://github.com/ericf/css-mediaquery.
